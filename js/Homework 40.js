@@ -77,7 +77,23 @@ const reload = (arr) => {
 
 
             changeBtn.onclick = () => {
-
+                save.onclick = () => {
+                
+                    console.log(item.task);
+                    console.log(todos);
+                    item.task = input.value
+                    modal.style.display = 'none'
+                    modal_bg.style.display = 'none'
+        
+                    setTimeout(
+                        () => {
+                            modal.style.opacity = '0'
+                            modal_bg.style.opacity = '0'
+                        }, 100)
+                    reload(todos)
+                    input.value = ''
+      
+            }
                 openModal()
             }
     
@@ -87,23 +103,7 @@ const reload = (arr) => {
     
             }
     
-            save.onclick = () => {
-                
-                console.log(item.task);
-                console.log(todos);
-                item.task = input.value
-                modal.style.display = 'none'
-                modal_bg.style.display = 'none'
-    
-                setTimeout(
-                    () => {
-                        modal.style.opacity = '0'
-                        modal_bg.style.opacity = '0'
-                    }, 100)
-                reload(todos)
-                input.value = ''
-  
-        }
+
         
     }
 
